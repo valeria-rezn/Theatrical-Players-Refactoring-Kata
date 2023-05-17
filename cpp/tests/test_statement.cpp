@@ -35,9 +35,10 @@ TEST_CASE("test_example_statement")
     ApprovalTests::Approvals::verify(statement(invoice, plays));
 }
 
-TEST_CASE("test_statement_with_new_play_types")
+TEST_CASE("test_example_statement2")
 {
     auto invoice = read_json_file(get_adjacent_file("invoice_new_plays.json"));
     auto plays = read_json_file(get_adjacent_file("new_plays.json"));
-    CHECK_THROWS_AS(statement(invoice, plays), std::domain_error);
+    ApprovalTests::Approvals::verify(statement(invoice, plays));
 }
+
